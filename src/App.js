@@ -36,13 +36,14 @@ function App() {
       setToDo([...toDo,newEntry])
       setNewTask('');//to clean the the temp value after adding
     }
-
   }
+
   //Deleted Task
   const deleteTask = (id)=>{
     let newTask=toDo.filter(task=>task.id !==id)
     setToDo(newTask);
   }
+
   //Mark Task as done
   const markDone = (id)=>{
     let newTask=toDo.map(task=>{
@@ -53,10 +54,12 @@ function App() {
     })
     setToDo(newTask);
   }
+
   //Cancel Update Task
   const cancelUpdate = ()=>{
     setUpdateData('');
   }
+
   //Change Task for update
   const changeTask = (e)=>{
     let newEntry={
@@ -66,6 +69,7 @@ function App() {
     }
     setUpdateData(newEntry)
   }
+
   //Update Task
   const updateTask = ()=>{
     let filterRecords=[...toDo].filter(task=>task.id!==updateData.id);
@@ -82,8 +86,9 @@ function App() {
 
   return (
     <div className="container App">
-      <br/><br/>
-      <h2>To Do List App </h2>
+      <br/>
+      <br/>
+      <h2>Plan... Execute... Achieve!</h2>
       <br/><br/>
       {updateData && updateData?(    
         <UpdateTaskForm   
@@ -92,7 +97,6 @@ function App() {
         cancelUpdate={cancelUpdate}
         changeTask={changeTask}
         />
-
       ):(
        <AddTaskForm
        newTask={newTask}
@@ -105,10 +109,8 @@ function App() {
       {/*Display ToDos*/}
 
       {toDo && toDo.length ?'':'No Tasks...'}
-      {/*sort the record*/}
-      <br/><br/>
-
-
+      <br/>
+      <br/>
       <ToDo
       toDo={toDo}
       markDone={markDone}
