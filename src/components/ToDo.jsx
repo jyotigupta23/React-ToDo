@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck,faNoteSticky,faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck,faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 const ToDo =({toDo,markDone,setUpdateData,deleteTask})=>{
